@@ -1,0 +1,44 @@
+.btn {
+    cursor: pointer;
+    background-color: transparent;
+    padding: 1rem;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+.green {
+    background-color: var(--color-call);
+}
+
+.blue {
+    background-color: var(--color-message);
+}
+
+.purple {
+    background-color: var(--color-text);
+}
+
+.submit {
+    background-color: var(--color-call);
+    border-radius: 1rem;
+    margin: 2rem;
+}
+
+.submit:hover {
+    background-color: var(--color-active);
+}
+
+.unavailable {
+    background-color: var(--color-danger);
+    border-radius: 1rem;
+    margin: 2rem;
+    cursor: auto;
+}
+
+.danger {
+    background-color: var(--color-danger);
+    border-radius: 1rem;
+    margin: 0 1rem;
+}

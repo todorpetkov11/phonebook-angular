@@ -1,0 +1,16 @@
+<div class="container">
+    <section class="container-header">
+        <span class="container-header-icon" (click)="back()">
+            <fa-icon [icon]="faBackward"></fa-icon>
+        </span>
+        <h2 class="container-title">Contacts List</h2>
+        <a type="button" class="btn add" routerLink="create">Add <fa-icon [icon]="faAdd"></fa-icon></a>
+    </section>
+
+    <section class="container-content">
+        <h4 class="container-subtitle">Family</h4>
+        <app-contacts-list-item></app-contacts-list-item>
+        <h4 class="container-subtitle">Work</h4>
+        <app-contacts-list-item></app-contacts-list-item>
+    </section>
+</div>

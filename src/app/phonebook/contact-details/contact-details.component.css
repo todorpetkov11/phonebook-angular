@@ -1,0 +1,79 @@
+.details-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.8rem;
+    padding: 83px 0 65px 0;
+    margin: 5rem 0 0 0;
+    box-shadow: 1px 6px 12px 4px var(--color-shadow);
+    background: var(--color-card-background);
+}
+
+.remove {
+    background-color: var(--color-danger);
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    font-size: 0.85rem;
+}
+
+
+.details-image-img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: -4rem;
+    transform: translate(-50%);
+}
+
+.details-name {
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.details-editable {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 1rem;
+}
+
+.editable-detail {
+    text-align: center;
+    width: 50%;
+}
+
+.details-bold {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    word-wrap: break-word;
+    color: var(--color-font-mid);
+}
+
+.icon {
+    font-size: 0.7rem;
+}
+
+.details-detail {
+    color: var(--color-font-light);
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    text-align: center;
+}
+
+.contact-actions {
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.location-details {
+    margin: 2rem 1rem 0 0;
+}
+
+.location-details > * {
+    text-align: left;
+}

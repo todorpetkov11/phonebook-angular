@@ -1,0 +1,6 @@
+.add {
+    background-color: var(--color-call);
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    font-size: 0.85rem;
+}

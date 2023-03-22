@@ -1,0 +1,58 @@
+<div class="container">
+    <section class="container-header">
+        <span (click)="back()" class="container-header-icon">
+            <fa-icon [icon]="faBackward"></fa-icon>
+        </span>
+        <h2 class="container-title">Gosho 2</h2>
+        <button type="button" class="btn remove container-header-icon">Delete <fa-icon [icon]="faRemove"></fa-icon>
+            </button>
+    </section>
+    <section class="container-content">
+        <section class="details-card">
+            <div class="details-image">
+                <img class="details-image-img"
+                    src="https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg"
+                    alt="">
+            </div>
+            <div class="details-info">
+                <h2 class="details-name">Georgi</h2>
+                <p class="details-detail email">georgi@abv.bg</p>
+                <div class="details-editable">
+                    <div class="editable-detail">
+                        <p class="details-detail">Phone</p>
+                        <p class="details-bold">0888818238 <span class="icon">
+                                <fa-icon [icon]="faPen"></fa-icon>
+                            </span></p>
+                    </div>
+                    <div class="editable-detail">
+                        <p class="details-detail">Group</p>
+                        <p class="details-bold">Family <span class="icon">
+                                <fa-icon [icon]="faPen"></fa-icon>
+                            </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-actions">
+                <button type="button" class="btn blue">
+                    <fa-icon [icon]="faEnvelope"></fa-icon>
+                </button>
+                <button type="button" class="btn purple">
+                    <fa-icon [icon]="faMessage"></fa-icon>
+                </button>
+                <button type="button" class="btn green">
+                    <fa-icon [icon]="faPhone"></fa-icon>
+                </button>
+            </div>
+        </section>
+        <section class="location-details">
+            <p class="details-detail">Address</p>
+            <p class="details-bold">99 Meadow Street</p>
+            <p class="details-detail">City</p>
+            <p class="details-bold">San Francisco</p>
+            <p class="details-detail">ZIP Code</p>
+            <p class="details-bold">1255</p>
+            <p class="details-detail">Country</p>
+            <p class="details-bold">United States</p>
+        </section>
+    </section>
+</div>

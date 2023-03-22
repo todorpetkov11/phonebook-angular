@@ -1,0 +1,22 @@
+<nav [ngClass]="darkTheme ? 'nav dark' : 'nav'">
+    <a class="nav-item" routerLink="contacts" routerLinkActive="active">
+        <fa-icon class="nav-link icon" [icon]="faContactBook"></fa-icon>
+        <span class="nav-link text">Contacts</span>
+    </a>
+
+    <a class="nav-item" routerLink="/profile" routerLinkActive="active">
+        <fa-icon class="nav-link icon" [icon]="faUser"></fa-icon>
+        <span class="nav-link text">Profile</span>
+    </a>
+    <a class="nav-item" routerLink="/login" routerLinkActive="active">
+        <fa-icon class="nav-link icon" [icon]="faSignIn"></fa-icon>
+        <span class="nav-link text">Login</span>
+    </a>
+    <button class="nav-item" (click)="changeTheme()">
+        <fa-icon *ngIf="darkTheme; else elseBlock" class="nav-link icon icon-sun" [icon]="faSun"></fa-icon>
+        <ng-template #elseBlock>
+            <fa-icon class="nav-link icon icon-moon" [icon]="faMoon"></fa-icon>
+        </ng-template>
+        <span class="nav-link text">Theme</span>
+    </button>
+</nav>

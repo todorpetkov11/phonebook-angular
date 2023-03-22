@@ -1,0 +1,15 @@
+.layout {
+    padding: 0 1rem 5rem 1rem;
+    background: var(--color-background);
+}
+
+.router-wrapper {
+    grid-area: auto;
+}
+
+@media screen and (min-width: 765px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+    }
+}

@@ -1,0 +1,106 @@
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.8rem;
+    padding: 2rem 3rem 65px 3rem;
+    margin: 1rem 1rem 0 1rem;
+    box-shadow: 1px 6px 12px 4px var(--color-shadow);
+    box-sizing: content-box;
+    background: var(--color-card-background);
+}
+
+.form-title {
+    padding: 0 0rem 1rem 0.5rem;
+    margin: 1rem 0;
+    color: var(--color-font-light);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.nested {
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+.form-label {
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.form-input,
+.form-input.ng-untouched {
+    border: none;
+    margin: 1rem 1rem;
+    border-bottom: 1px solid var(--color-active);
+    padding: 1rem 0.5rem;
+    color: inherit;
+    outline: none;
+    transition: 0.2s ease-in-out;
+    background-color: inherit;
+    font-size: 1rem;
+}
+
+.form-input:focus {
+    transform: scale(110%);
+    background-color: var(--color-active);
+    color: white;
+    box-shadow: 12px 10px 1px 0px var(--color-shadow);
+}
+
+input.ng-invalid {
+    background-color: var(--color-danger);
+    border-bottom: 1px solid var(--color-danger);
+}
+
+input.ng-invalid:focus {
+    background-color: var(--color-danger);
+    border-bottom: 1px solid var(--color-danger);
+
+}
+
+input.ng-dirty {
+    color: white;
+    background-color: var(--color-danger);
+}
+
+input.ng-valid {
+    background-color: inherit;
+    color: inherit;
+    border-bottom: 1px solid var(--color-call);
+}
+
+input.ng-valid:focus {
+    background-color: var(--color-call);
+    border-bottom: 1px solid var(--color-call);
+}
+
+.input-error {
+    position: absolute;
+    bottom: 18%;
+    right: 5%;
+    font-size: 0.75rem;
+    color: var(--color-error-font);
+}
+
+@media screen and (min-width: 765px) {
+
+    .form {
+        padding: 2rem 6rem 65px 6rem;
+    }
+
+    .nested {
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+    }
+
+}
