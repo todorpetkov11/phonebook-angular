@@ -10,14 +10,26 @@
 
 .green {
     background-color: var(--color-call);
+    height: 50px;
+    width: 50px;
 }
 
 .blue {
     background-color: var(--color-message);
+    height: 50px;
+    width: 50px;
 }
 
 .purple {
     background-color: var(--color-text);
+    height: 50px;
+    width: 50px;
+}
+
+.red {
+    height: 50px;
+    width: 50px;
+    background-color: var(--color-danger);
 }
 
 .submit {
@@ -35,6 +47,13 @@
     border-radius: 1rem;
     margin: 2rem;
     cursor: auto;
+}
+
+.add {
+    background-color: var(--color-call);
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    font-size: 0.85rem;
 }
 
 .danger {

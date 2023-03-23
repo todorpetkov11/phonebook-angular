@@ -6,6 +6,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule } from '@angular/router';
 import { PhonebookModule } from './phonebook/phonebook.module';
+import { UserModule } from './user/user.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -14,10 +16,12 @@ import { PhonebookModule } from './phonebook/phonebook.module';
   ],
   imports: [
     BrowserModule,
-    RouterModule,
     AppRoutingModule,
+    RouterModule,
     FontAwesomeModule,
+    PagesModule,
     PhonebookModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,12 @@
     background: var(--color-card-background);
 }
 
+.nested {
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
 .form-title {
     padding: 0 0rem 1rem 0.5rem;
     margin: 1rem 0;
@@ -22,12 +28,6 @@
     display: flex;
     flex-direction: column;
     position: relative;
-}
-
-.nested {
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
 }
 
 .form-label {
@@ -49,11 +49,24 @@
     font-size: 1rem;
 }
 
+.quick {
+    padding: 0;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0 0.5rem;
+    width: auto;
+}
+
+
 .form-input:focus {
     transform: scale(110%);
     background-color: var(--color-active);
     color: white;
     box-shadow: 12px 10px 1px 0px var(--color-shadow);
+}
+
+.quick:focus {
+    transform: none;
 }
 
 input.ng-invalid {
@@ -89,6 +102,10 @@ input.ng-valid:focus {
     right: 5%;
     font-size: 0.75rem;
     color: var(--color-error-font);
+}
+
+.click-here {
+    color: var(--color-danger);
 }
 
 @media screen and (min-width: 765px) {

@@ -2,6 +2,7 @@
 @import url(assets/buttons.css);
 @import url(assets/container.css);
 @import url(assets/form.css);
+@import url(assets/typography.css);
 
 :root {
     --color-background: linear-gradient(103deg, rgba(255, 196, 231, 1) 0%, rgba(202, 221, 255, 1) 11%, rgba(255, 255, 255, 1) 29%, rgba(203, 255, 244, 1) 55%, rgba(225, 241, 255, 1) 70%, rgba(203, 211, 255, 1) 78%, rgba(169, 223, 245, 1) 100%, rgba(216, 250, 251, 1) 100%);

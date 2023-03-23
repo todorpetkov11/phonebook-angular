@@ -3,25 +3,25 @@
         <span (click)="back()" class="container-header-icon">
             <fa-icon [icon]="faBackward"></fa-icon>
         </span>
-        <h2 class="container-title">Editing contact...</h2>
+        <h2 class="container-title">Register</h2>
     </section>
 
     <section class="container-content">
-        <form [formGroup]="editForm" class="form" (ngSubmit)="onSubmit()">
+        <form [formGroup]="registerForm" class="form" (ngSubmit)="onSubmit()">
 
-            <h3 class="form-title">Contact Information</h3>
+            <h3 class="form-title">Register Information</h3>
 
             <div class="input-wrapper">
-                <label class="form-label" for="name">Contact name</label>
-                <input class="form-input" [ngClass]="contactName?.invalid && (contactName?.touched || contactName?.dirty) ?
-            'form-input invalid' : 'form-input'" formControlName="contactName" id="name" />
-                <div *ngIf="contactName?.errors?.['required']" class="input-error">
+                <label class="form-label" for="username">Username</label>
+                <input class="form-input" [ngClass]="username?.invalid && (username?.touched || username?.dirty) ?
+            'form-input invalid' : 'form-input'" formControlName="username" id="username" />
+                <div *ngIf="username?.errors?.['required']" class="input-error">
                     required
                 </div>
-                <div *ngIf="contactName?.errors?.['minlength']">
+                <div *ngIf="username?.errors?.['minlength']">
                     <span class="input-error">more length !!!</span>
                 </div>
-                <div *ngIf="contactName?.valid">
+                <div *ngIf="username?.valid">
                     <span class="input-error">perfect name:3 ... for now</span>
                 </div>
             </div>
@@ -59,7 +59,31 @@
                 </div>
             </div>
 
-            <h3 class="form-title">Address Information</h3>
+            <div class="input-wrapper">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-input" [ngClass]="password?.invalid && (password?.touched || password?.dirty) ?
+            'form-input invalid' : 'form-input'" formControlName="password" id="password" type="password" />
+                <div *ngIf="password?.errors?.['required']" class="input-error">
+                    required
+                </div>
+                <div *ngIf="password?.valid">
+                    <span class="input-error">very secure indeed</span>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <label class="form-label" for="rePassword">Re-password</label>
+                <input class="form-input" [ngClass]="rePassword?.invalid && (rePassword?.touched || rePassword?.dirty) ?
+            'form-input invalid' : 'form-input'" formControlName="rePassword" id="rePassword" type="password" />
+                <div *ngIf="rePassword?.errors?.['required']" class="input-error">
+                    required
+                </div>
+                <div *ngIf="rePassword?.valid">
+                    <span class="input-error">they match!</span>
+                </div>
+            </div>
+
+            <!-- <h3 class="form-title">Address Information</h3>
             <div formGroupName="fullAddress" class="form nested">
 
                 <div class="input-wrapper">
@@ -112,10 +136,13 @@
                         <span class="input-error">perfect</span>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <button type="submit" [disabled]="!editForm.valid"
-                [ngClass]="editForm.valid ? 'btn submit' : 'btn unavailable'">Update</button>
+            <button type="submit" [disabled]="!registerForm.valid"
+                [ngClass]="registerForm.valid ? 'btn submit' : 'btn unavailable'">Register</button>
+
+            <h4 class="form-title">Already registered? <a class="click-here" routerLink="../login">Click here...</a>
+            </h4>
         </form>
     </section>
 </div>

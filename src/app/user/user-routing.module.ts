@@ -1,9 +1,10 @@
-// import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
-// const routes: Routes = [
-//     { path: 'login', component: , },
-//     { path: 'register', component:  },
-//     { path: 'profile/:id', component:  },
-// ];
+const routes: Routes = [
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+];
 
-// export const PhonebookRoutingModule = RouterModule.forChild(routes)
+export const UserRoutingModule = RouterModule.forChild(routes)
