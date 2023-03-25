@@ -1,0 +1,25 @@
+.home-content {
+    padding: 2rem;
+    color: var(--color-font);
+}
+
+.home-title {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.home-text {
+    margin: 3rem 0;
+    font-size: 1.3rem;
+}
+
+.start-here {
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.start-here:hover {
+    color: var(--color-active);
+    transition: 0.2s ease-in-out;
+}

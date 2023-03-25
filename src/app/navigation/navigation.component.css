@@ -20,7 +20,6 @@
     width: 100%;
     border: none;
     background-color: inherit;
-    color: var(--color-font-mid);
     cursor: pointer;
     position: relative;
 }
@@ -33,7 +32,7 @@
     font-size: 0.7rem;
 }
 
-.active {
+.active, .active > * {
     background-color: var(--color-active);
     color: white;
 }
@@ -49,21 +48,15 @@
         border-radius: 0.8rem;
     }
 
-    .nav-link.icon {
-        font-size: 1.5rem;
-    }
-
-    .nav-link.text {
-        font-size: 1rem;
-    }
-
     .nav-item {
         padding: 1rem 0;
     }
 
-    .nav-item:hover {
+    .nav-item:hover,
+    .nav-item:hover>* {
         background-color: var(--color-active);
         color: white;
     }
+
 
 }

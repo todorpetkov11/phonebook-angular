@@ -1,6 +1,6 @@
 .details-card {
-    position: relative;
     display: flex;
+    position: relative;
     flex-direction: column;
     border-radius: 0.8rem;
     padding: 83px 1rem 0 1rem;
@@ -37,17 +37,6 @@
     justify-content: space-around;
     flex-direction: column;
     padding: 0.5rem 1rem;
-    color: var(--color-font-light);
-}
-
-.details-detail {
-    color: var(--color-font-light);
-    font-size: 0.8rem;
-    margin: 0.2rem;
-}
-
-.detail-info {
-    color: var(--color-font-mid);
 }
 
 .contact-actions {

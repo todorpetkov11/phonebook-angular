@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { faContactBook, faHome, faSignIn, faSun, faMoon, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faContactBook, faHome, faSignIn, faSun, faMoon, faUser, faSignOut } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navigation',
@@ -13,6 +13,15 @@ export class NavigationComponent {
   public faSun = faSun;
   public faMoon = faMoon;
   public faUser = faUser;
+  public faLogout = faSignOut;
+
+  public onLogout() {
+
+  };
+
+  public onChangeTheme() {
+    this.changeTheme();
+  };
 
   @Input() changeTheme!: () => void;
   @Input() darkTheme!: boolean;

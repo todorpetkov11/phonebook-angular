@@ -6,33 +6,16 @@
     box-shadow: 1px 6px 12px 4px var(--color-shadow);
     gap: 1.2rem;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
     background: var(--color-card-background);
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
 }
+
 
 .card-image-img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-}
-
-.card-name {
-    font-weight: 500;
-    font-size: 1.1rem;
-    color: var(--color-font-font);
-}
-
-.card-number {
-    margin-top: 0.2rem;
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: var(--color-font-mid);
-}
-
-.card-group {
-    font-size: 0.8rem;
-    margin-top: 0.2rem;
-    color: var(--color-font-light);
 }
 
 .contact-card:hover {

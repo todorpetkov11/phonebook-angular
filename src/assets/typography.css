@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+
+.font-main {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--color-font);
+}
+
+
+.font-mid {
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--color-font-mid);
+}
+
+.font-light {
+    color: var(--color-font-light);
+    font-size: 0.8rem;
+    margin: 0.2rem;
+}
+
+.font-light-nav {
+    color: var(--color-font-light);
+    font-size: 0.7rem;
+}
+
+.container-title {
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container-subtitle {
+    padding: 1rem 0rem 1rem 1.6rem;
+    color: var(--color-font-light);
+    font-size: 1rem;
+    font-weight: 400;
+}

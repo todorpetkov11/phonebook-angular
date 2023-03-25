@@ -7,6 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule } from '@angular/router';
 import { PhonebookModule } from './phonebook/phonebook.module';
 import { UserModule } from './user/user.module';
+import { HttpClientModule } from '@angular/common/http';
 import { PagesModule } from './pages/pages.module';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { PagesModule } from './pages/pages.module';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    HttpClientModule,
     FontAwesomeModule,
     PagesModule,
     PhonebookModule,

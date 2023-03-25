@@ -15,23 +15,10 @@
 .container {
     min-height: 100vh;
     position: relative;
-}
+    animation-name: fadeInRight;
+    animation-duration: 0.5s;
 
-.container-title {
-    font-weight: 500;
-    font-size: 1.3rem;
-    text-align: center;
-    overflow: hidden;
 }
-
-.container-subtitle {
-    padding: 1rem 0rem 1rem 1.6rem;
-    color: var(--color-font-light);
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-.no-content {}
 
 @media screen and (min-width: 756px) {
     .container-header {
@@ -40,6 +27,8 @@
 
     .container {
         padding-bottom: 0;
+        animation-name: fadeIn;
+        animation-duration: 0.5s;
     }
 
     .container-content {
