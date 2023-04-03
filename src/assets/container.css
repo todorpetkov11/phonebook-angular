@@ -15,23 +15,20 @@
 .container {
     min-height: 100vh;
     position: relative;
-    animation-name: fadeInRight;
-    animation-duration: 0.5s;
-
 }
 
 @media screen and (min-width: 756px) {
     .container-header {
-        padding: 1rem 1rem;
+        margin-top: 1rem;
+        padding: 1rem 2rem 1rem 2rem;
     }
 
-    .container {
+    /* .container {
         padding-bottom: 0;
-        animation-name: fadeIn;
-        animation-duration: 0.5s;
-    }
+    } */
 
     .container-content {
         margin-left: 1rem;
+        padding: 0 4rem;
     }
 }

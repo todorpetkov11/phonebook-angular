@@ -7,40 +7,40 @@
     </section>
 
     <section class="container-content">
-        <form [formGroup]="createForm" class="form" (ngSubmit)="onSubmit()">
+        <form [formGroup]="createForm" class="form" (ngSubmit)="onSubmit($event)">
 
             <h3 class="form-title">Contact Information</h3>
 
             <div class="input-wrapper">
                 <label class="form-label" for="name">Contact name</label>
-                <input class="form-input" [ngClass]="contactName?.invalid && (contactName?.touched || contactName?.dirty) ?
-            'form-input invalid' : 'form-input'" formControlName="contactName" id="name" />
-                <div *ngIf="contactName?.errors?.['required']" class="input-error">
+                <input class="form-input" [ngClass]="name?.invalid && (name?.touched || name?.dirty) ?
+            'form-input invalid' : 'form-input'" formControlName="name" id="name" />
+                <div *ngIf="name?.errors?.['required']" class="input-error">
                     required
                 </div>
-                <div *ngIf="contactName?.errors?.['minlength']">
+                <div *ngIf="name?.errors?.['minlength']">
                     <span class="input-error">more length !!!</span>
                 </div>
-                <div *ngIf="contactName?.valid">
+                <div *ngIf="name?.valid">
                     <span class="input-error">perfect name:3 ... for now</span>
                 </div>
             </div>
 
             <div class="input-wrapper">
-                <label class="form-label" for="phone">Phone</label>
-                <input class="form-input" [ngClass]="phone?.invalid && (phone?.touched || phone?.dirty) ?
-            'form-input invalid' : 'form-input'" formControlName="phone" name="phone" required />
-                <div *ngIf="phone?.errors?.['required']" class="input-error">
+                <label class="form-label" for="number">Phone</label>
+                <input class="form-input" [ngClass]="number?.invalid && (number?.touched || number?.dirty) ?
+            'form-input invalid' : 'form-input'" formControlName="number" name="number" required />
+                <div *ngIf="number?.errors?.['required']" class="input-error">
                     required
                 </div>
-                <div *ngIf="phone?.errors?.['minlength']">
+                <div *ngIf="number?.errors?.['minlength']">
                     <span class="input-error">not enough numbers..</span>
                 </div>
-                <div *ngIf="phone?.errors?.['maxlength']">
+                <div *ngIf="number?.errors?.['maxlength']">
                     <span class="input-error">more than 10 characters ?</span>
                 </div>
-                <div *ngIf="phone?.valid">
-                    <span class="input-error">hope somebody picks up...</span>
+                <div *ngIf="number?.valid">
+                    <span class="input-error">already dialing it</span>
                 </div>
             </div>
 
@@ -58,62 +58,70 @@
                     <span class="input-error">wonderful</span>
                 </div>
             </div>
+            <div class="input-wrapper">
+                <label class="form-label" for="email">Conctact photo</label>
+                <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+                <div class="file-upload">
+                    {{fileName || "No file uploaded yet."}}
+                    <button class="btn add" (click)="fileUpload.click()">
+                        Choose file
+                    </button>
 
-            <h3 class="form-title">Address Information</h3>
-            <div formGroupName="fullAddress" class="form nested">
-
-                <div class="input-wrapper">
-                    <label class="form-label" for="country">Country</label>
-                    <input class="form-input" [ngClass]="country?.invalid && (country?.touched || country?.dirty) ?
-                'form-input invalid' : 'form-input'" formControlName="country" name="country" />
-                    <div *ngIf="country?.errors?.['required']" class="input-error">
-                        required
-                    </div>
-                    <div *ngIf="country?.valid">
-                        <span class="input-error">great country, never been there</span>
-                    </div>
-                </div>
-
-                <div class="input-wrapper">
-                    <label class="form-label" for="city">City</label>
-                    <input class="form-input" [ngClass]="city?.invalid && (city?.touched || city?.dirty) ?
-                'form-input invalid' : 'form-input'" formControlName="city" name="city" />
-                    <div *ngIf="city?.errors?.['required']" class="input-error">
-                        required
-                    </div>
-                    <div *ngIf="city?.valid">
-                        <span class="input-error">i know where u live now</span>
-                    </div>
-                </div>
-
-                <div class="input-wrapper">
-                    <label class="form-label" for="address">Address</label>
-                    <input class="form-input" [ngClass]="address?.invalid && (address?.touched || address?.dirty) ?
-                'form-input invalid' : 'form-input'" formControlName="address" name="address" />
-                    <div *ngIf="address?.errors?.['required']" class="input-error">
-                        required
-                    </div>
-                    <div *ngIf="address?.valid">
-                        <span class="input-error">awesome</span>
-                    </div>
-                </div>
-
-                <div class="input-wrapper">
-                    <label class="form-label" for="zip">Zip</label>
-                    <input class="form-input" [ngClass]="zip?.invalid && (zip?.touched || zip?.dirty) ?
-                'form-input invalid' : 'form-input'" formControlName="zip" name="zip" />
-                    <div *ngIf="zip?.errors?.['required']" class="input-error">
-                        required
-                    </div>
-                    <div *ngIf="zip?.errors?.['minlength']">
-                        <span class="input-error">no zip codes like this found</span>
-                    </div>
-                    <div *ngIf="zip?.valid">
-                        <span class="input-error">perfect</span>
-                    </div>
                 </div>
             </div>
 
+            <h3 class="form-title">Address Information</h3>
+
+            <div class="input-wrapper">
+                <label class="form-label" for="country">Country</label>
+                <input class="form-input" [ngClass]="country?.invalid && (country?.touched || country?.dirty) ?
+                'form-input invalid' : 'form-input'" formControlName="country" name="country" />
+                <div *ngIf="country?.errors?.['required']" class="input-error">
+                    required
+                </div>
+                <div *ngIf="country?.valid">
+                    <span class="input-error">great country, never been there</span>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <label class="form-label" for="city">City</label>
+                <input class="form-input" [ngClass]="city?.invalid && (city?.touched || city?.dirty) ?
+                'form-input invalid' : 'form-input'" formControlName="city" name="city" />
+                <div *ngIf="city?.errors?.['required']" class="input-error">
+                    required
+                </div>
+                <div *ngIf="city?.valid">
+                    <span class="input-error">i know where u live now</span>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <label class="form-label" for="address">Address</label>
+                <input class="form-input" [ngClass]="address?.invalid && (address?.touched || address?.dirty) ?
+                'form-input invalid' : 'form-input'" formControlName="address" name="address" />
+                <div *ngIf="address?.errors?.['required']" class="input-error">
+                    required
+                </div>
+                <div *ngIf="address?.valid">
+                    <span class="input-error">awesome</span>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <label class="form-label" for="zip">Zip</label>
+                <input class="form-input" [ngClass]="zip?.invalid && (zip?.touched || zip?.dirty) ?
+                'form-input invalid' : 'form-input'" formControlName="zip" name="zip" />
+                <div *ngIf="zip?.errors?.['required']" class="input-error">
+                    required
+                </div>
+                <div *ngIf="zip?.errors?.['minlength']">
+                    <span class="input-error">no zip codes like this found</span>
+                </div>
+                <div *ngIf="zip?.valid">
+                    <span class="input-error">perfect</span>
+                </div>
+            </div>
             <button type="submit" [disabled]="!createForm.valid"
                 [ngClass]="createForm.valid ? 'btn submit' : 'btn unavailable'">Create</button>
         </form>

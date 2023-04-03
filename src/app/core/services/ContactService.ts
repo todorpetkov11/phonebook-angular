@@ -17,6 +17,10 @@ export class contactService {
         return this.http.get<IContact[]>(`${apiUrl}/contacts`)
     }
 
+    editContact(editData: {}, contactId: string): Observable<IContact> {
+        return this.http.put<IContact>(`${apiUrl}/contacts/${contactId}`, editData)
+    }
+
     getContactById(contactId: string): Observable<IContact> {
         return this.http.get<IContact>(`${apiUrl}/contacts/${contactId}`)
     }

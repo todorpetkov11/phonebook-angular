@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DeletePromptComponent } from './delete-prompt/delete-prompt.component';
 import { LoaderComponent } from './loader/loader.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -11,7 +12,11 @@ import { LoaderComponent } from './loader/loader.component';
     LoaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule,
+  ],
+  exports: [
+    LoaderComponent
   ]
 })
 export class SharedModule { }

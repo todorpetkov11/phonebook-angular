@@ -1,6 +1,8 @@
 .home-content {
     padding: 2rem;
     color: var(--color-font);
+    animation-name: fadeIn;
+    animation-duration: 1s;
 }
 
 .home-title {

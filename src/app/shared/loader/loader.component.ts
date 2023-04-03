@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faG, faGear } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-loader',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./loader.component.css']
 })
 export class LoaderComponent {
+
+  public faGear = faGear;
 
 }

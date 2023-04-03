@@ -7,44 +7,47 @@
     </section>
 
     <section class="container-content">
-        <form [formGroup]="editForm" class="form" (ngSubmit)="onSubmit()">
+        <div class="loader-wrapper">
+            <app-loader *ngIf="!contact"></app-loader>
+        </div>
+        <form *ngIf="contact" [formGroup]="editForm" class="form" (ngSubmit)="onSubmit()">
 
             <h3 class="form-title">Contact Information</h3>
 
             <div class="input-wrapper">
                 <label class="form-label" for="name">Contact name</label>
-                <input class="form-input" [ngClass]="contactName?.invalid && (contactName?.touched || contactName?.dirty) ?
-            'form-input invalid' : 'form-input'" formControlName="contactName" id="name" />
-                <div *ngIf="contactName?.errors?.['required']" class="input-error">
+                <input class="form-input" [ngClass]="name?.invalid && (name?.touched || name?.dirty) ?
+            'form-input invalid' : 'form-input'" formControlName="name" id="name" />
+                <div *ngIf="name?.errors?.['required']" class="input-error">
                     required
                 </div>
-                <div *ngIf="contactName?.errors?.['minlength']">
+                <div *ngIf="name?.errors?.['minlength']">
                     <span class="input-error">more length !!!</span>
                 </div>
-                <div *ngIf="contactName?.valid">
+                <div *ngIf="name?.valid">
                     <span class="input-error">perfect name:3 ... for now</span>
                 </div>
             </div>
 
             <div class="input-wrapper">
-                <label class="form-label" for="phone">Phone</label>
-                <input class="form-input" [ngClass]="phone?.invalid && (phone?.touched || phone?.dirty) ?
-            'form-input invalid' : 'form-input'" formControlName="phone" name="phone" required />
-                <div *ngIf="phone?.errors?.['required']" class="input-error">
+                <label class="form-label" for="number">Phone</label>
+                <input class="form-input" [ngClass]="number?.invalid && (number?.touched || number?.dirty) ?
+            'form-input invalid' : 'form-input'" formControlName="number" name="number" required />
+                <div *ngIf="number?.errors?.['required']" class="input-error">
                     required
                 </div>
-                <div *ngIf="phone?.errors?.['minlength']">
+                <div *ngIf="number?.errors?.['minlength']">
                     <span class="input-error">not enough numbers..</span>
                 </div>
-                <div *ngIf="phone?.errors?.['maxlength']">
+                <div *ngIf="number?.errors?.['maxlength']">
                     <span class="input-error">more than 10 characters ?</span>
                 </div>
-                <div *ngIf="phone?.valid">
+                <div *ngIf="number?.valid">
                     <span class="input-error">hope somebody picks up...</span>
                 </div>
             </div>
 
-            <div class="input-wrapper">
+            <!-- <div class="input-wrapper">
                 <label class="form-label" for="email">Email</label>
                 <input class="form-input" [ngClass]="email?.invalid && (email?.touched || email?.dirty) ?
             'form-input invalid' : 'form-input'" formControlName="email" id="email" type="email" />
@@ -57,10 +60,10 @@
                 <div *ngIf="email?.valid">
                     <span class="input-error">wonderful</span>
                 </div>
-            </div>
+            </div> -->
 
             <h3 class="form-title">Address Information</h3>
-            <div formGroupName="fullAddress" class="form nested">
+            <div class="form nested">
 
                 <div class="input-wrapper">
                     <label class="form-label" for="country">Country</label>

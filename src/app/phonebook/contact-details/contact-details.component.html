@@ -8,42 +8,46 @@
         <span (click)="back()" class="container-header-icon">
             <fa-icon [icon]="faBackward"></fa-icon>
         </span>
-        <h2 class="container-title">Gosho 2</h2>
+        <h2 class="container-title">Contact</h2>
         <!-- <button type="button" class="btn remove container-header-icon">Delete <fa-icon [icon]="faRemove"></fa-icon> -->
         <!-- </button> -->
     </section>
     <section class="container-content">
-        <section class="details-card">
+        <div class="loader-wrapper">
+            <app-loader *ngIf="!contact"></app-loader>
+        </div>
+        <section *ngIf="contact" class="details-card">
             <div class="details-image">
                 <img class="details-image-img"
-                    src="https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg"
-                    alt="">
+                    [src]="'assets/userNoImage.png'"
+                    alt="assets/userNoImage.png">
             </div>
             <section class="details-info">
-                <h2 class="font-main details-name">Georgi</h2>
+                <h2 class="font-main details-name">{{contact.name}}</h2>
                 <div class="info-main">
-                    <p class="font-light">Phone</p>
-                    <p class="font-mid">0888818238</p>
-                    <p class="font-light">Email</p>
-                    <p class="font-mid">georgi@abv.bg</p>
-                    <p class="font-light">Group</p>
-                    <p class="font-mid">Family</p>
+                    <p class="font-light">Name</p>
+                    <p class="font-mid">{{contact.name}}</p>
+                    <p class="font-light">Number</p>
+                    <p class="font-mid">{{contact.number}}</p>
+                    <!-- <p class="font-light">Group</p>
+                    <p class="font-mid">Family</p> -->
                     <p class="font-light">Address</p>
-                    <p class="font-mid">99 Meadow Street</p>
+                    <p class="font-mid">{{contact.address}}</p>
                     <p class="font-light">City</p>
-                    <p class="font-mid">San Francisco</p>
+                    <p class="font-mid">{{contact.zip}}</p>
                     <p class="font-light">Country</p>
-                    <p class="font-mid">United States</p>
+                    <p class="font-mid">{{contact.country}}</p>
                 </div>
             </section>
             <div class="contact-actions">
-                <button routerLink="../../edit/2" type="button" class="btn purple">
+                <button [routerLink]="'../../edit/' + contact.id" type="button" class="btn purple">
                     <fa-icon [icon]="faPen"></fa-icon>
                 </button>
-                <button type="button" class="btn red">
+                <button type="button" (click)="onDelete()" class="btn red">
                     <fa-icon [icon]="faRemove"></fa-icon>
                 </button>
             </div>
+            
         </section>
     </section>
 </div>

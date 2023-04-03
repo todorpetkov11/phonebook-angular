@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/core/services/AuthService';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginComponent {
 
-  constructor(private location: Location, private fb: FormBuilder) { }
+  constructor(private location: Location, private fb: FormBuilder, private authService: AuthService) { }
 
   back(): void {
     this.location.back()
@@ -19,17 +20,15 @@ export class LoginComponent {
   public faBackward = faArrowLeft;
 
   loginForm = this.fb.group({
-    // email: ['', [Validators.required, Validators.email],],
-    username: ['', [Validators.required],],
+    email: ['', [Validators.required, Validators.email],],
     password: ['', [Validators.required],],
   });
 
   onSubmit() {
-    let a = this.loginForm.value
-    console.log(a)
-  }
+    let data = this.loginForm.value;
+    this.authService.login(data).subscribe();
+  };
 
   get email() { return this.loginForm.get('email'); }
   get password() { return this.loginForm.get('password'); }
-  get username() { return this.loginForm.get('username'); }
 }

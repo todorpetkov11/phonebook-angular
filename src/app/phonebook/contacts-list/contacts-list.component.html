@@ -8,13 +8,17 @@
     </section>
 
     <section class="container-content">
-        <h4 class="container-subtitle">Family</h4>
-        <app-contacts-list-item></app-contacts-list-item>
-        <h4 class="container-subtitle">Work</h4>
-        <app-contacts-list-item></app-contacts-list-item>
-        <div class="no-content">
-            <h2 class="container-subtitle">No contacts yet...</h2>
+        <div class="main-main">
+            <app-contacts-list-item *ngFor='let contact of contacts' [contact]='contact'>
+            </app-contacts-list-item>
         </div>
+        <div class="loader-wrapper">
+            <app-loader *ngIf="!contacts"></app-loader>
+        </div>
+        <div class="no-data" *ngIf="contacts?.length === 0">
+            <p>There aren't any contacts yet!</p>
+        </div>
+
     </section>
 
 </div>

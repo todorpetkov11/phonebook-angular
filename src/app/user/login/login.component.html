@@ -12,10 +12,10 @@
             <h3 class="form-title">Login Information</h3>
 
             <div class="input-wrapper">
-                <label class="form-label" for="name">Email or username</label>
-                <input class="form-input" [ngClass]="username?.invalid && (username?.touched || username?.dirty) ?
-            'form-input invalid' : 'form-input'" formControlName="username" id="name" />
-                <div *ngIf="username?.errors?.['required']" class="input-error">
+                <label class="form-label" for="name">Email</label>
+                <input class="form-input" [ngClass]="email?.invalid && (email?.touched || email?.dirty) ?
+            'form-input invalid' : 'form-input'" formControlName="email" id="name" />
+                <div *ngIf="email?.errors?.['required']" class="input-error">
                     required
                 </div>
             </div>

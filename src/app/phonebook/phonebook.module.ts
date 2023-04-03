@@ -9,6 +9,7 @@ import { ContactEditComponent } from './contact-edit/contact-edit.component';
 import { RouterModule } from '@angular/router';
 import { PhonebookRoutingModule } from './phonebook-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     PhonebookRoutingModule,
     ReactiveFormsModule,
+    SharedModule,
     FontAwesomeModule
   ],
   exports: [

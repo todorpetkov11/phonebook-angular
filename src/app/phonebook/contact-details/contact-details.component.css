@@ -7,6 +7,8 @@
     margin: 5rem 0 0 0;
     box-shadow: 1px 6px 12px 4px var(--color-shadow);
     background: var(--color-card-background);
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
 }
 
 .remove {

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/core/services/AuthService';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class RegisterComponent {
 
-  constructor(private location: Location, private fb: FormBuilder) { }
+  constructor(private location: Location, private fb: FormBuilder, private authService: AuthService) { }
 
   back(): void {
     this.location.back()
@@ -19,31 +20,25 @@ export class RegisterComponent {
   public faBackward = faArrowLeft;
 
   registerForm = this.fb.group({
-    username: ['', [Validators.required, Validators.minLength(3)],],
-    phone: ['', [Validators.minLength(10), Validators.maxLength(11), Validators.required],],
+    name: ['', [Validators.required, Validators.minLength(3)],],
+    // phone: ['', [Validators.minLength(10), Validators.maxLength(11), Validators.required],],
     email: ['', [Validators.required, Validators.email],],
     password: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)],],
     rePassword: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)],],
-    // fullAddress: this.fb.group({
-    //   country: ['', [Validators.required],],
-    //   city: ['', [Validators.required],],
-    //   address: ['', [Validators.required],],
-    //   zip: ['', [Validators.required, Validators.minLength(4)],]
-    // }),
   });
 
   onSubmit() {
-    let a = this.registerForm.value
-    console.log(a)
+    let data = {
+      name: this.registerForm.get('name')?.value,
+      email: this.registerForm.get('email')?.value,
+      password: this.registerForm.get('password')?.value
+    }
+    this.authService.register(data).subscribe();
   }
 
-  get username() { return this.registerForm.get('username'); }
-  get phone() { return this.registerForm.get('phone'); }
+  get name() { return this.registerForm.get('name'); }
+  // get phone() { return this.registerForm.get('phone'); }
   get email() { return this.registerForm.get('email'); }
   get password() { return this.registerForm.get('password'); }
   get rePassword() { return this.registerForm.get('rePassword'); }
-  // get address() { return this.registerForm.get('fullAddress')?.get('address'); }
-  // get zip() { return this.registerForm.get('fullAddress')?.get('zip'); }
-
-
 }

@@ -8,6 +8,9 @@
     box-shadow: 1px 6px 12px 4px var(--color-shadow);
     box-sizing: content-box;
     background: var(--color-card-background);
+    
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
 }
 
 .nested {
@@ -47,6 +50,15 @@
     transition: 0.2s ease-in-out;
     background-color: inherit;
     font-size: 1rem;
+}
+
+.file-upload {
+    margin: 1rem 1rem;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
 }
 
 .quick {
@@ -106,6 +118,10 @@ input.ng-valid:focus {
 
 .click-here {
     color: var(--color-danger);
+}
+
+.file-input {
+    display: none;
 }
 
 @media screen and (min-width: 765px) {

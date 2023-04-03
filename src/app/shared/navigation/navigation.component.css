@@ -58,5 +58,8 @@
         color: white;
     }
 
+    .nav-action-wrapper {
+        width: 100%;
+    }
 
 }
