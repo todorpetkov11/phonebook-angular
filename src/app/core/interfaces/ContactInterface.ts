@@ -3,6 +3,7 @@ export default interface IContact {
     name: string,
     number: string,
     image: string,
+    group: string,
     country: string,
     city: string,
     address: string,

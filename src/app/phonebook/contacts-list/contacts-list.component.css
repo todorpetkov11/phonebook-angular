@@ -1,0 +1,11 @@
+.get-started {
+    text-align: center;
+    padding-top: 2rem;
+
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+.get-started-image {
+    max-width: 100px;
+}

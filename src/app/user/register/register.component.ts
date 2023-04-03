@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/services/AuthService';
+import { MatchingPasswordValidator } from 'src/app/core/validators/matching-password-validator';
 
 @Component({
   selector: 'app-register',
@@ -25,7 +26,11 @@ export class RegisterComponent {
     email: ['', [Validators.required, Validators.email],],
     password: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)],],
     rePassword: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)],],
-  });
+  },
+    {
+      validators: [MatchingPasswordValidator.match('password', 'rePassword')]
+    }
+  );
 
   onSubmit() {
     let data = {

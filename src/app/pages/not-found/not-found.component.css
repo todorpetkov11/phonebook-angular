@@ -1,5 +1,5 @@
-.home-content {
-    padding-top: 2rem;
+.not-found-content {
+    padding-top: 5rem;
     color: var(--color-font);
     display: flex;
     flex-direction: column;
@@ -8,12 +8,16 @@
     align-items: center;
 }
 
-.home-title {
+.not-found-image {
+    max-width: 200px;
+}
+
+.not-found-title {
     font-size: 3rem;
     font-weight: 500;
 }
 
-.home-text {
+.not-found-text {
     margin: 3rem 0;
     font-size: 1.3rem;
 }

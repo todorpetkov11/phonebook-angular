@@ -15,11 +15,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.storageService.isTokenExpired()) {
-      // this.storageService.remove();
+      this.storageService.remove();
     }
   }
-
-
 
   darkTheme: boolean = this.storageService.getTheme();
 

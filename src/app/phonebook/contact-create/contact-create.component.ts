@@ -35,7 +35,8 @@ export class ContactCreateComponent {
   createForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)],],
     number: ['', [Validators.minLength(10), Validators.maxLength(11), Validators.required],],
-    email: ['', [Validators.required, Validators.email],],
+    // email: ['', [Validators.required, Validators.email],],
+    group: ['', Validators.required],
     image: new FormControl(),
     country: ['', [Validators.required],],
     city: ['', [Validators.required],],
@@ -45,7 +46,8 @@ export class ContactCreateComponent {
 
   get name() { return this.createForm.get('name'); }
   get number() { return this.createForm.get('number'); }
-  get email() { return this.createForm.get('email'); }
+  // get email() { return this.createForm.get('email'); }
+  get group() { return this.createForm.get('email'); }
   get country() { return this.createForm.get('country'); }
   get city() { return this.createForm.get('city'); }
   get address() { return this.createForm.get('address'); }
@@ -57,7 +59,7 @@ export class ContactCreateComponent {
     if (file) {
       console.log(file)
       this.fileName = file.name;
-      this.createForm.get('image')?.setValue(file)
+      this.createForm.patchValue(file)
     }
   }
 }

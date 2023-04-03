@@ -8,7 +8,7 @@
     box-shadow: 1px 6px 12px 4px var(--color-shadow);
     box-sizing: content-box;
     background: var(--color-card-background);
-    
+
     animation-name: fadeIn;
     animation-duration: 0.5s;
 }
@@ -48,6 +48,29 @@
     color: inherit;
     outline: none;
     transition: 0.2s ease-in-out;
+    background-color: inherit;
+    font-size: 1rem;
+}
+
+.select-input {
+    border: none;
+    margin: 1rem 1rem;
+    border-bottom: 1px solid var(--color-active);
+    padding: 1rem 0.5rem;
+    color: inherit;
+    outline: none;
+    transition: 0.2s ease-in-out;
+    background-color: inherit;
+    font-size: 1rem;
+}
+
+.form-option {
+    border: none;
+    margin: 1rem 1rem;
+    border-bottom: 1px solid var(--color-active);
+    padding: 1rem 0.5rem;
+    color: inherit;
+    outline: none;
     background-color: inherit;
     font-size: 1rem;
 }

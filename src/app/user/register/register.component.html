@@ -78,6 +78,9 @@
                 <div *ngIf="rePassword?.errors?.['required']" class="input-error">
                     required
                 </div>
+                <div *ngIf="rePassword?.errors?.['matching']" class="input-error">
+                    {{rePassword?.errors?.['matching']}}
+                </div>
                 <div *ngIf="rePassword?.valid">
                     <span class="input-error">they match!</span>
                 </div>

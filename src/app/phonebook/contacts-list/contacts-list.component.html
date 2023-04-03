@@ -9,6 +9,7 @@
 
     <section class="container-content">
         <div class="main-main">
+            <!-- <h4 class="container-subtitle">Family</h4> -->
             <app-contacts-list-item *ngFor='let contact of contacts' [contact]='contact'>
             </app-contacts-list-item>
         </div>
@@ -16,8 +17,13 @@
             <app-loader *ngIf="!contacts"></app-loader>
         </div>
         <div class="no-data" *ngIf="contacts?.length === 0">
-            <p>There aren't any contacts yet!</p>
+
+            <section class="get-started">
+                <h3>There aren't any contacts yet!</h3>
+                <img class="get-started-image" src="assets/notedpadPng.png" alt="">
+            </section>
         </div>
+        <router-outlet></router-outlet>
 
     </section>
 

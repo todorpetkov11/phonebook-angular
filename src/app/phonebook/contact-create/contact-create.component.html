@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="input-wrapper">
+            <!-- <div class="input-wrapper">
                 <label class="form-label" for="email">Email</label>
                 <input class="form-input" [ngClass]="email?.invalid && (email?.touched || email?.dirty) ?
             'form-input invalid' : 'form-input'" formControlName="email" id="email" type="email" />
@@ -57,7 +57,18 @@
                 <div *ngIf="email?.valid">
                     <span class="input-error">wonderful</span>
                 </div>
+            </div> -->
+
+            <div class="input-wrapper">
+                <label class="form-label" for="group">Group</label>
+                <select class="select-input" [ngClass]="group?.invalid && (group?.touched || group?.dirty) ?
+            'form-input invalid' : 'form-input'" formControlName="group" id="group">
+                    <option class="form-option">Family</option>
+                    <option class="form-option">Work</option>
+                    <option class="form-option">Friends</option>
+                </select>
             </div>
+
             <div class="input-wrapper">
                 <label class="form-label" for="email">Conctact photo</label>
                 <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
@@ -69,6 +80,18 @@
 
                 </div>
             </div>
+
+            <!-- <div class="input-wrapper">
+                <label class="form-label" for="email">Conctact photo</label>
+                <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+                <div class="file-upload">
+                    {{fileName || "No file uploaded yet."}}
+                    <button class="btn add" (click)="fileUpload.click()">
+                        Choose file
+                    </button>
+
+                </div>
+            </div> -->
 
             <h3 class="form-title">Address Information</h3>
 

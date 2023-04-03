@@ -45,6 +45,7 @@ export class ContactEditComponent implements OnInit {
     name: ['', [Validators.required, Validators.minLength(3)],],
     number: ['', [Validators.minLength(10), Validators.maxLength(11), Validators.required],],
     // email: ['', [Validators.required, Validators.email],],
+    group: ['', Validators.required],
     image: new FormControl(),
     country: ['', [Validators.required],],
     city: ['', [Validators.required],],
@@ -64,6 +65,7 @@ export class ContactEditComponent implements OnInit {
 
   get name() { return this.editForm.get('name'); }
   get number() { return this.editForm.get('number'); }
+  get group() { return this.editForm.get('group'); }
   get email() { return this.editForm.get('email'); }
   get country() { return this.editForm.get('country'); }
   get city() { return this.editForm.get('city'); }

@@ -10,7 +10,8 @@ li,
 a,
 button,
 input,
-form {
+form,
+select {
     font-family: Rubik, sans-serif;
     margin: 0;
     padding: 0;

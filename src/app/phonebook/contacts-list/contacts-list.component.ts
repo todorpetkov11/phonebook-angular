@@ -27,8 +27,6 @@ export class ContactsListComponent implements OnInit {
     )
   }
 
-
-
   back(): void {
     this.location.back()
   }
